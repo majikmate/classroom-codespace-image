@@ -2,10 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
     "name": "Ubuntu",
-    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
+    "image": "mcr.microsoft.com/devcontainers/base:debian",
 
     // Features to add to the dev container. More info: https://containers.dev/features.
     "features": {
@@ -52,7 +49,8 @@
         }
     },
 
-    // Use 'postCreateCommand' to run commands after the container is created.
+    // update os packages whenever the container is created
+    // onCreateCommand is also triggered on automatic prebuilds
     "remoteUser": "vscode",
     "containerEnv": {
         "DEBIAN_FRONTEND": "noninteractive"
