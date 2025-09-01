@@ -56,7 +56,7 @@
         "DEBIAN_FRONTEND": "noninteractive",
         "TZ": "Europe/Vienna"
     },
-    "onCreateCommand": "sudo ./.devcontainer/scripts/on-create.sh",
+    "onCreateCommand": "sudo ${localWorkspaceFolder}/.devcontainer/scripts/on-create.sh",
 
     // configure vscode environment
     "customizations": {
