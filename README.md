@@ -1,16 +1,20 @@
 # Classroom Codespace Image
 
 A multi-architecture [Dev Container](https://containers.dev/) image for
-classroom use, published to
-[`ghcr.io/majikmate/classroom-codespace-image`](https://github.com/orgs/majikmate/packages/container/classroom-codespace-image).
+classroom use based on Debian
 
-This image provides a consistent development environment across `linux/amd64`
-and `linux/arm64` architectures.
+**Image Location**
+
+- [`ghcr.io/majikmate/classroom-codespace-image`](https://github.com/majikmate/classroom-codespace-image/pkgs/container/classroom-codespace-image).
+
+**Supported Architectures:**
+
+- `linux/amd64`
+- `linux/arm64`
 
 ## Included Features
 
-Based on Debian, this image comes with a variety of pre-installed tools and
-languages.
+This image comes with a variety of pre-installed tools and languages.
 
 ### Core Tools
 
@@ -37,13 +41,13 @@ image.
 
 ```json
 {
-    "name": "My Project",
-    "image": "ghcr.io/majikmate/classroom-codespace-image:latest",
+  "name": "My Project",
+  "image": "ghcr.io/majikmate/classroom-codespace-image:latest",
 
-    // Add other features or customizations
-    "features": {
-        // e.g., "ghcr.io/devcontainers/features/rust:1": {}
-    }
+  // Add other features or customizations
+  "features": {
+    // e.g., "ghcr.io/devcontainers/features/rust:1": {}
+  }
 }
 ```
 
