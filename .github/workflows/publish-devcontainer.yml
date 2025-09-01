@@ -20,7 +20,7 @@ jobs:
     outputs:
       imageName: ${{ env.IMAGE_NAME }}
       isRelease: ${{ startsWith(github.ref, 'refs/tags/v') }}
-      version: ${{ steps.meta.outputs.version }}
+      version: ${{ steps.meta.outputs.version || github.sha }}
       tags: ${{ steps.meta.outputs.tags }}
     steps:
       - name: Checkout repository
