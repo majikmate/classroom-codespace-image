@@ -55,7 +55,7 @@
     "containerEnv": {
         "DEBIAN_FRONTEND": "noninteractive"
     },
-    "onCreateCommand": "sudo /workspaces/${localWorkspaceFolderBasename}/.devcontainer/scripts/on-create.sh",
+    "onCreateCommand": "sudo /bin/bash /workspaces/${localWorkspaceFolderBasename}/.devcontainer/scripts/on-create.sh",
 
     // configure vscode environment
     "customizations": {
