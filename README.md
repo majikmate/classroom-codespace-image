@@ -26,9 +26,13 @@ languages.
 - **Python**
 - **Conda & Mamba (Miniforge)**
 
-## Usage
+## Usage in a Dev Container Environment
 
-To use this image in your own Dev Container, update your
+To use this image in your development environment, reference it in your
+`.devcontainer/devcontainer.json` file as the `image` property. This ensures
+your workspace uses the pre-configured tools and languages provided by the
+image.
+
 `.devcontainer/devcontainer.json`:
 
 ```json
@@ -43,5 +47,39 @@ To use this image in your own Dev Container, update your
 }
 ```
 
-This provides a fast and consistent startup experience for GitHub Codespaces or
-local Dev Containers.
+You can specify the image version using semantic versioning—pin to a major,
+minor, or patch version as needed. The tag `latest` will always reference the
+most recently published image.
+
+**Examples:**
+
+- Use the latest image:
+  ```json
+  "image": "ghcr.io/majikmate/classroom-codespace-image:latest"
+  ```
+- Pin to a major version (e.g., `1`):
+  ```json
+  "image": "ghcr.io/majikmate/classroom-codespace-image:1"
+  ```
+- Pin to a minor version (e.g., `1.2`):
+  ```json
+  "image": "ghcr.io/majikmate/classroom-codespace-image:1.2"
+  ```
+- Pin to a specific patch version (e.g., `1.2.3`):
+  ```json
+  "image": "ghcr.io/majikmate/classroom-codespace-image:1.2.3"
+  ```
+
+## Pulling the Image with Docker
+
+You can also pull the image directly using Docker:
+
+```sh
+docker pull ghcr.io/majikmate/classroom-codespace-image:latest
+```
+
+Replace `latest` with a specific version tag if needed:
+
+```sh
+docker pull ghcr.io/majikmate/classroom-codespace-image:1.2.3
+```
