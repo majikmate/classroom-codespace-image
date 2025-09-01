@@ -54,7 +54,7 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"remoteUser": "vscode",
-	"postCreateCommand": [
+	"onCreateCommand": [
 		"sudo export DEBIAN_FRONTEND=noninteractive",
 		"sudo apt-get update",
 		"sudo apt-get upgrade -y",
