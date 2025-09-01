@@ -95,7 +95,7 @@ jobs:
       
       - name: Create and push multi-arch manifest
         run: |
-          echo "${{ needs.setup.outputs.tags }}" | while IFS= read -r tag; do
+          echo "${{ needs.setup.outputs.tags }}" | while IFS= read -r tag; do 
             if [ -z "$tag" ]; then continue; fi
             docker manifest create "$tag" \
               --amend "${{ needs.setup.outputs.imageName }}:${{ needs.setup.outputs.version }}-amd64" \
