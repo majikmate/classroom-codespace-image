@@ -53,10 +53,9 @@
     // onCreateCommand is also triggered on automatic prebuilds
     "remoteUser": "vscode",
     "containerEnv": {
-        "DEBIAN_FRONTEND": "noninteractive",
-        "TZ": "Europe/Vienna"
+        "DEBIAN_FRONTEND": "noninteractive"
     },
-    "onCreateCommand": "sudo ${localWorkspaceFolder}/.devcontainer/scripts/on-create.sh",
+    "onCreateCommand": "sudo /workspaces/${localWorkspaceFolderBasename}/.devcontainer/scripts/on-create.sh",
 
     // configure vscode environment
     "customizations": {
