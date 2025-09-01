@@ -4,12 +4,41 @@ on:
   push:
     branches:
       - main
+    tags:
+      - 'v*'
+  pull_request:
     paths:
       - '.devcontainer/**'
       - '.github/**'
 
+env:
+  IMAGE_NAME: ghcr.io/${{ github.repository }}
+
 jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      imageName: ${{ env.IMAGE_NAME }}
+      isRelease: ${{ startsWith(github.ref, 'refs/tags/v') }}
+      version: ${{ steps.meta.outputs.version }}
+      tags: ${{ steps.meta.outputs.tags }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup version metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.IMAGE_NAME }}
+          tags: |
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            type=raw,value=latest,enable={{is_default_branch}}
+  
   build:
+    needs: setup
     strategy:
       matrix:
         include:
@@ -23,7 +52,6 @@ jobs:
     permissions:
       contents: read
       packages: write
-      id-token: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -32,6 +60,8 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Log in to the GitHub Container Registry
+        # only log in if this is a release, otherwise we do not push and hence no login is required
+        if: needs.setup.outputs.isRelease == 'true'
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
@@ -41,13 +71,16 @@ jobs:
       - name: Build and push dev container image for ${{ matrix.arch }}
         uses: devcontainers/ci@v0.3
         with:
-          imageName: ghcr.io/majikmate/classroom-codespace-image
-          imageTag: latest-${{ matrix.arch }}
-          push: always
+          imageName: ${{ needs.setup.outputs.imageName }}
+          imageTag: ${{ needs.setup.outputs.version }}-${{ matrix.arch }}
+          # when isRelease is true, push: always, otherwise push: never
+          push: ${{ needs.setup.outputs.isRelease == 'true' && 'always' || 'never' }} 
           platform: ${{ matrix.platform }}
 
   create-manifest:
-    needs: [build]
+    needs: [setup, build]
+    # only create the manifest when isRelease is true
+    if: needs.setup.outputs.isRelease == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -62,7 +95,9 @@ jobs:
       
       - name: Create and push multi-arch manifest
         run: |
-          docker manifest create ghcr.io/majikmate/classroom-codespace-image:latest \
-            --amend ghcr.io/majikmate/classroom-codespace-image:latest-amd64 \
-            --amend ghcr.io/majikmate/classroom-codespace-image:latest-arm64
-          docker manifest push ghcr.io/majikmate/classroom-codespace-image:latest
+          for tag in ${{ needs.setup.outputs.tags }}; do
+            docker manifest create $tag \
+              --amend ${{ needs.setup.outputs.imageName }}:${{ needs.setup.outputs.version }}-amd64 \
+              --amend ${{ needs.setup.outputs.imageName }}:${{ needs.setup.outputs.version }}-arm64
+            docker manifest push $tag
+          done
