@@ -55,7 +55,7 @@
     "containerEnv": {
         "DEBIAN_FRONTEND": "noninteractive"
     },
-    "onCreateCommand": "sudo /bin/bash ${containerWorkspaceFolder}/.devcontainer/scripts/on-create.sh",
+    "onCreateCommand": "ls -la ${containerWorkspaceFolder} && ls -la ${containerWorkspaceFolder}/.devcontainer/scripts && sudo /bin/bash ${containerWorkspaceFolder}/.devcontainer/scripts/on-create.sh",
 
     // configure vscode environment
     "customizations": {
