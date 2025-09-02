@@ -97,7 +97,7 @@ jobs:
             echo "--- Locale ---"
             locale
             echo "--- Git ---"
-            git config --global --list
+            git config --system --list
             echo "--- Whoami ---"
             whoami
             echo "--- .bashrc ---"
