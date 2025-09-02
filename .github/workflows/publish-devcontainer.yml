@@ -78,11 +78,10 @@ jobs:
           cacheFrom: type=registry,ref=${{ needs.setup.outputs.imageName }}:buildcache-${{ matrix.arch }}
           cacheTo: type=registry,ref=${{ needs.setup.outputs.imageName }}:buildcache-${{ matrix.arch }},mode=max
           runCmd: |
-            . ~/.bashrc
             echo "--- Whoami ---"
             whoami
             echo "--- Locale ---"
-            locale
+            cat /etc/default/locale
             echo "--- Go version ---"
             go version
             echo "--- Java version ---"
