@@ -96,6 +96,10 @@ jobs:
             conda --version
             echo "--- Locale ---"
             locale
+            echo "--- Git ---"
+            git config --global --list
+            echo "--- Whoami ---"
+            whoami
 
   create-manifest:
     needs: [setup, build]
