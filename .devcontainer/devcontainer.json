@@ -47,8 +47,8 @@
             "version": "latest",
             "variant": "Miniforge3"
         },
-        "ghcr.io/majikmate/classroom-codespace-feature/locales:1": {},
-        "ghcr.io/majikmate/classroom-codespace-feature/updateos:1": {}
+        "ghcr.io/majikmate/classroom-codespace-feature/locales:1.1.1": {},
+        "ghcr.io/majikmate/classroom-codespace-feature/updateos:1.0.0": {}
     },
 
     // update os packages whenever the container is created
