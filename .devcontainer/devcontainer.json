@@ -46,7 +46,9 @@
         "ghcr.io/rocker-org/devcontainer-features/miniforge:2": {
             "version": "latest",
             "variant": "Miniforge3"
-        }
+        },
+        "ghcr.io/majikmate/classroom-codespace-feature/locales:1": {},
+        "ghcr.io/majikmate/classroom-codespace-feature/updateos:1": {}
     },
 
     // update os packages whenever the container is created
@@ -55,7 +57,8 @@
     "containerEnv": {
         "DEBIAN_FRONTEND": "noninteractive"
     },
-    "onCreateCommand": "sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove -y && sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* && sudo ln -fs /usr/share/zoneinfo/Europe/Vienna /etc/localtime && sudo dpkg-reconfigure -f noninteractive tzdata && sudo mkdir -p /usr/local/share/majikmate/ && sudo touch /usr/local/share/majikmate/codespace-image-created ",
+    // sudo update-locale LANG="en_US.UTF-8" LC_TIME="de_AT.UTF-8" LC_NUMERIC="de_AT.UTF-8" LC_MONETARY="de_AT.UTF-8" LC_MEASUREMENT="de_AT.UTF-8"
+    // "onCreateCommand": "sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove -y && sudo apt-get clean && sudo rm -rf /var/lib/apt/lists/* && sudo ln -fs /usr/share/zoneinfo/Europe/Vienna /etc/localtime && sudo dpkg-reconfigure -f noninteractive tzdata && sudo mkdir -p /usr/local/share/majikmate/ && sudo touch /usr/local/share/majikmate/codespace-image-created ",
 
     // configure vscode environment
     "customizations": {
