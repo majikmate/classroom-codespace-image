@@ -38,7 +38,7 @@
             "nvmVersion": "0.40.3"
         },
         "ghcr.io/devcontainer-community/devcontainer-features/deno.com:1.0.0": {
-            "version": "2.4.5"
+            "version": "v2.4.5"
         },
         "ghcr.io/devcontainers/features/python:1.7.1": {
             "version": "3.12.11",
