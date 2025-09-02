@@ -77,8 +77,8 @@ jobs:
           # when isRelease is true, push: always, otherwise push: never
           push: ${{ needs.setup.outputs.isRelease == 'true' && 'always' || 'never' }} 
           platform: ${{ matrix.platform }}
-          cacheFrom: ${{ needs.setup.outputs.imageName }}:cache
-          cacheTo: ${{ needs.setup.outputs.imageName }}:cache
+          cacheFrom: ${{ needs.setup.outputs.imageName }}:buildcache-${{ matrix.arch }}
+          cacheTo: ${{ needs.setup.outputs.imageName }}:buildcache-${{ matrix.arch }}
           runCmd: |
             echo "--- Go version ---"
             go version
