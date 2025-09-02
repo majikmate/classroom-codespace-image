@@ -48,10 +48,9 @@
             "variant": "Miniforge3"
         },
         "ghcr.io/majikmate/classroom-codespace-feature/locales:1.1.2": {
-            "lang": "en_US.UTF-8" // remove, only for testing
+            "lang": "en_US.UTF-8"
         },
         "ghcr.io/majikmate/classroom-codespace-feature/updateos:1.0.1": {
-            "atstart": true // remove, only for testing
         },
         "ghcr.io/majikmate/classroom-codespace-feature/git:1.0.1": {
         }
