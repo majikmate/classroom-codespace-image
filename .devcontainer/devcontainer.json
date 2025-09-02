@@ -47,7 +47,7 @@
             "version": "25.3.0-3",
             "variant": "Miniforge3"
         },
-        "ghcr.io/majikmate/classroom-codespace-feature/locales:1.1.5": {
+        "ghcr.io/majikmate/classroom-codespace-feature/locales:1.1.6": {
             "lang": "en_US.UTF-8"
         },
         "ghcr.io/majikmate/classroom-codespace-feature/updateos:1.0.1": {
