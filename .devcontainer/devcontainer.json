@@ -55,7 +55,42 @@
     "containerEnv": {
         "DEBIAN_FRONTEND": "noninteractive"
     },
-    "onCreateCommand": "sudo /bin/bash ${containerWorkspaceFolder}/.devcontainer/on-create.sh",
+    "onCreateCommand": [
+        "apt-get",
+        "update",
+        "&&",
+        "apt-get",
+        "upgrade",
+        "-y",
+        "&&",
+        "apt-get",
+        "autoremove",
+        "-y",
+        "&&",
+        "apt-get",
+        "clean",
+        "&&",
+        "rm",
+        "-rf",
+        "/var/lib/apt/lists/*",
+        "&&",
+        "ln",
+        "-fs",
+        "/usr/share/zoneinfo/Europe/Vienna",
+        "/etc/localtime",
+        "&&",
+        "dpkg-reconfigure",
+        "-f",
+        "noninteractive",
+        "tzdata",
+        "&&",
+        "mkdir",
+        "-p",
+        "$(dirname \"/usr/local/share/majikmate/codespace-image-created\")",
+        "&&",
+        "touch",
+        "/usr/local/share/majikmate/codespace-image-created"
+    ],
 
     // configure vscode environment
     "customizations": {
