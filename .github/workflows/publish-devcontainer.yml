@@ -94,8 +94,8 @@ jobs:
             deno --version
             echo "--- Conda version ---"
             conda --version
-            echo "--- Date ---"
-            date
+            echo "--- Locale ---"
+            locale
 
   create-manifest:
     needs: [setup, build]
