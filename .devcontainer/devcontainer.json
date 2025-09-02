@@ -25,7 +25,7 @@
             "installGradle": true,
             "installMaven": true,
             "version": "24.0.2",
-            "jdkDistro": "ms",
+            "jdkDistro": "tem",
             "gradleVersion": "9.0.0",
             "mavenVersion": "3.9.11",
             "antVersion": "1.10.15",
