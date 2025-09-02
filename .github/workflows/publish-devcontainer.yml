@@ -78,6 +78,11 @@ jobs:
           cacheFrom: type=registry,ref=${{ needs.setup.outputs.imageName }}:buildcache-${{ matrix.arch }}
           cacheTo: type=registry,ref=${{ needs.setup.outputs.imageName }}:buildcache-${{ matrix.arch }},mode=max
           runCmd: |
+            . ~/.bashrc
+            echo "--- Whoami ---"
+            whoami
+            echo "--- Locale ---"
+            locale
             echo "--- Go version ---"
             go version
             echo "--- Java version ---"
@@ -94,16 +99,8 @@ jobs:
             deno --version
             echo "--- Conda version ---"
             conda --version
-            echo "--- Locale ---"
-            locale
             echo "--- Git ---"
             git config --system --list
-            echo "--- Whoami ---"
-            whoami
-            echo "--- .bashrc ---"
-            cat ~/.bashrc
-            echo "--- .zshrc ---"
-            cat ~/.zshrc
 
   create-manifest:
     needs: [setup, build]
