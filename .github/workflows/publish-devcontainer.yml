@@ -75,8 +75,8 @@ jobs:
           # when isRelease is true, push: always, otherwise push: never
           push: ${{ needs.setup.outputs.isRelease == 'true' && 'always' || 'never' }} 
           platform: ${{ matrix.platform }}
-          cacheFrom: type=registry,ref=${{ needs.setup.outputs.imageName }}:buildcache-${{ matrix.arch }}
-          cacheTo: type=registry,ref=${{ needs.setup.outputs.imageName }}:buildcache-${{ matrix.arch }},mode=max
+          # cacheFrom: type=registry,ref=${{ needs.setup.outputs.imageName }}:buildcache-${{ matrix.arch }}
+          # cacheTo: type=registry,ref=${{ needs.setup.outputs.imageName }}:buildcache-${{ matrix.arch }},mode=max
           runCmd: |
             echo "--- Go version ---"
             go version
