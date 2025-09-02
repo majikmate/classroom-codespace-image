@@ -53,7 +53,7 @@
         "ghcr.io/majikmate/classroom-codespace-feature/updateos:1.0.1": {
             "atstart": true // remove, only for testing
         },
-        "ghcr.io/majikmate/classroom-codespace-feature/git:1.0.0": {
+        "ghcr.io/majikmate/classroom-codespace-feature/git:1.0.1": {
         }
     },
 
