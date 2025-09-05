@@ -73,10 +73,20 @@
                 "denoland.vscode-deno"
             ],
             "settings": {
-                // hide .devcontainer and .github folders
+                // default terminal profile
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": {
+                    "bash": null,
+                    "zsh": {
+                        "path": "zsh"
+                    }
+                },
+
+                // hide dot folders
                 "files.exclude": {
                     "**/.devcontainer": true,
-                    "**/.github": true
+                    "**/.github": true,
+                    "**/.vscode": true
                 },
                 // configure the innitial default theme
                 "workbench.colorTheme": "Visual Studio Dark",
