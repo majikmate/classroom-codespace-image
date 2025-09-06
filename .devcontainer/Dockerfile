@@ -1,1 +1,1 @@
-FROM mcr.microsoft.com/devcontainers/base:bookworm
+FROM mcr.microsoft.com/devcontainers/base:2.0.1-debian-12
