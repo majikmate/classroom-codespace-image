@@ -7,3 +7,11 @@ updates:
     commit-message:
       prefix: "feat(dev)"
       include: "scope"
+
+  - package-ecosystem: "docker"
+    directory: "/.devcontainer"
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "feat(dev)"
+      include: "scope"
