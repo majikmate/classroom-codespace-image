@@ -30,6 +30,31 @@ This image comes with a variety of pre-installed tools and languages.
 - **Python**
 - **Conda & Mamba (Miniforge)**
 
+## Version management
+
+The configuration explicitly references a Dockerfile with a pinned image version
+so that dependabot can detect version changes.
+
+`devcontainer.json` feature version are locked by `devcontainer-lock.json`.
+
+To manage the lock file install devcontainer cli:
+
+```
+$ npm install -g @devcontainers/cli
+```
+
+To check for potential upgrades to the latest feature versions use:
+
+```
+$ devcontainer outdated --workspace-folder .
+```
+
+To upgrade to the latest feature versions use:
+
+```
+$ devcontainer upgrade --workspace-folder .
+```
+
 ## Usage in a Dev Container Environment
 
 To use this image in your development environment, reference it in your
@@ -41,13 +66,13 @@ image.
 
 ```json
 {
-  "name": "My Project",
-  "image": "ghcr.io/majikmate/classroom-codespace-image:latest",
+    "name": "My Project",
+    "image": "ghcr.io/majikmate/classroom-codespace-image:latest",
 
-  // Add other features or customizations
-  "features": {
-    // e.g., "ghcr.io/devcontainers/features/rust:1": {}
-  }
+    // Add other features or customizations
+    "features": {
+        // e.g., "ghcr.io/devcontainers/features/rust:1": {}
+    }
 }
 ```
 
