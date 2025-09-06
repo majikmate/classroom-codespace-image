@@ -1,1 +1,1 @@
-FROM mcr.microsoft.com/devcontainers/base:2.0.1-debian-12@sha256:c4114d60c29077df6cafa9651fb61faaace557c054311dae4227f01c6e54f4d9
+FROM mcr.microsoft.com/devcontainers/base@sha256:c4114d60c29077df6cafa9651fb61faaace557c054311dae4227f01c6e54f4d9
