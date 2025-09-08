@@ -3,7 +3,10 @@
 {
     "name": "Debian",
     "build": {
-        "dockerfile": "Dockerfile"
+        "dockerfile": "Dockerfile",
+        "args": {
+            "GH_TOKEN": "${env:GH_TOKEN}"
+        }
     },
 
     // Features to add to the dev container. More info: https://containers.dev/features.

@@ -69,6 +69,8 @@ jobs:
 
       - name: Build and push dev container image for ${{ matrix.arch }}
         uses: devcontainers/ci@v0.3
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           imageName: ${{ needs.setup.outputs.imageName }}
           imageTag: ${{ needs.setup.outputs.version }}-${{ matrix.arch }}
