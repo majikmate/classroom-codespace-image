@@ -35,6 +35,11 @@
       "resolved": "ghcr.io/devcontainers/features/python@sha256:cf9b6d879790a594b459845b207c5e1762a0c8f954bb8033ff396e497f9c301b",
       "integrity": "sha256:cf9b6d879790a594b459845b207c5e1762a0c8f954bb8033ff396e497f9c301b"
     },
+    "ghcr.io/majikmate/classroom-codespace-feature/gh-cli-extensions:latest": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/majikmate/classroom-codespace-feature/gh-cli-extensions@sha256:8d0fa2ed4c9379fddf8b89f919fa1f01137d23b757b03048e3d9fb48cb4a1108",
+      "integrity": "sha256:8d0fa2ed4c9379fddf8b89f919fa1f01137d23b757b03048e3d9fb48cb4a1108"
+    },
     "ghcr.io/majikmate/classroom-codespace-feature/git:latest": {
       "version": "1.0.2",
       "resolved": "ghcr.io/majikmate/classroom-codespace-feature/git@sha256:b7907a51bd917accdec9acebac13f1c4e36fbbdb7e92d764ceb9bf2e5a875685",
@@ -45,10 +50,10 @@
       "resolved": "ghcr.io/majikmate/classroom-codespace-feature/locales@sha256:777062740c342b813ae6e9130f8b86d114f1f9b953df4872561a8c22afd104fc",
       "integrity": "sha256:777062740c342b813ae6e9130f8b86d114f1f9b953df4872561a8c22afd104fc"
     },
-    "ghcr.io/majikmate/classroom-codespace-feature/updateos:latest": {
-      "version": "1.0.1",
-      "resolved": "ghcr.io/majikmate/classroom-codespace-feature/updateos@sha256:91b0828f9c197dc08ee7d03500a449d93ade53bf48f1062c89a6fdfa20cca9ae",
-      "integrity": "sha256:91b0828f9c197dc08ee7d03500a449d93ade53bf48f1062c89a6fdfa20cca9ae"
+    "ghcr.io/majikmate/classroom-codespace-feature/update-os:latest": {
+      "version": "1.0.0",
+      "resolved": "ghcr.io/majikmate/classroom-codespace-feature/update-os@sha256:a8275c287b975d672c14926531926f3c69d5785a97b22f21401a09a0093e5952",
+      "integrity": "sha256:a8275c287b975d672c14926531926f3c69d5785a97b22f21401a09a0093e5952"
     },
     "ghcr.io/rocker-org/devcontainer-features/miniforge:latest": {
       "version": "2.0.1",

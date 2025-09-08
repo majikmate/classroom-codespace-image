@@ -52,11 +52,29 @@
         "ghcr.io/majikmate/classroom-codespace-feature/locales:latest": {
             "lang": "en_US.UTF-8"
         },
-        "ghcr.io/majikmate/classroom-codespace-feature/updateos:latest": {
-        },
         "ghcr.io/majikmate/classroom-codespace-feature/git:latest": {
+        },
+        "ghcr.io/majikmate/classroom-codespace-feature/gh-cli-extensions:latest": {
+        },
+        "ghcr.io/majikmate/classroom-codespace-feature/update-os:latest": {
         }
     },
+
+    // Explicit feature installation order - update-os must be last
+    "overrideFeatureInstallOrder": [
+        "ghcr.io/devcontainers/features/github-cli",
+        "ghcr.io/devcontainers/features/docker-in-docker",
+        "ghcr.io/devcontainers/features/go",
+        "ghcr.io/devcontainers/features/java",
+        "ghcr.io/devcontainers/features/node",
+        "ghcr.io/devcontainer-community/devcontainer-features/deno.com",
+        "ghcr.io/devcontainers/features/python",
+        "ghcr.io/rocker-org/devcontainer-features/miniforge",
+        "ghcr.io/majikmate/classroom-codespace-feature/locales",
+        "ghcr.io/majikmate/classroom-codespace-feature/git",
+        "ghcr.io/majikmate/classroom-codespace-feature/gh-cli-extensions",
+        "ghcr.io/majikmate/classroom-codespace-feature/update-os"
+    ],
 
     // update os packages whenever the container is created
     // onCreateCommand is also triggered on automatic prebuilds
