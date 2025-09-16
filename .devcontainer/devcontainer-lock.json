@@ -46,9 +46,9 @@
       "integrity": "sha256:777062740c342b813ae6e9130f8b86d114f1f9b953df4872561a8c22afd104fc"
     },
     "ghcr.io/majikmate/classroom-codespace-feature/update-os:latest": {
-      "version": "1.0.0",
-      "resolved": "ghcr.io/majikmate/classroom-codespace-feature/update-os@sha256:a8275c287b975d672c14926531926f3c69d5785a97b22f21401a09a0093e5952",
-      "integrity": "sha256:a8275c287b975d672c14926531926f3c69d5785a97b22f21401a09a0093e5952"
+      "version": "1.0.1",
+      "resolved": "ghcr.io/majikmate/classroom-codespace-feature/update-os@sha256:f00b9a43008acc87a9ef9b0f706d28d12d12ce8e8836c20e95d7ae1abe6310ad",
+      "integrity": "sha256:f00b9a43008acc87a9ef9b0f706d28d12d12ce8e8836c20e95d7ae1abe6310ad"
     },
     "ghcr.io/rocker-org/devcontainer-features/miniforge:latest": {
       "version": "2.0.1",

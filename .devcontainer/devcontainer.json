@@ -57,8 +57,6 @@
         },
         "ghcr.io/majikmate/classroom-codespace-feature/git:latest": {
         },
-        // "ghcr.io/majikmate/classroom-codespace-feature/gh-cli-extensions:latest": {
-        // },
         "ghcr.io/majikmate/classroom-codespace-feature/update-os:latest": {
         }
     },
@@ -75,7 +73,6 @@
         "ghcr.io/rocker-org/devcontainer-features/miniforge",
         "ghcr.io/majikmate/classroom-codespace-feature/locales",
         "ghcr.io/majikmate/classroom-codespace-feature/git",
-        "ghcr.io/majikmate/classroom-codespace-feature/gh-cli-extensions",
         "ghcr.io/majikmate/classroom-codespace-feature/update-os"
     ],
 
