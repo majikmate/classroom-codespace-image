@@ -57,8 +57,8 @@
         },
         "ghcr.io/majikmate/classroom-codespace-feature/git:latest": {
         },
-        "ghcr.io/majikmate/classroom-codespace-feature/gh-cli-extensions:latest": {
-        },
+        // "ghcr.io/majikmate/classroom-codespace-feature/gh-cli-extensions:latest": {
+        // },
         "ghcr.io/majikmate/classroom-codespace-feature/update-os:latest": {
         }
     },
@@ -97,12 +97,12 @@
             ],
             "settings": {
                 // default terminal profile
-                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.defaultProfile.linux": "bash",
                 "terminal.integrated.profiles.linux": {
-                    "bash": null,
-                    "zsh": {
-                        "path": "zsh"
-                    }
+                    // "bash": null,
+                    // "zsh": {
+                    //     "path": "zsh"
+                    // }
                 },
 
                 // hide dot folders
